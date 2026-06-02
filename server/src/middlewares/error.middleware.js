@@ -1,6 +1,7 @@
 import { ApiError } from "../utils/ApiError.js";
 import { env } from "../config/env.js";
 import { logger } from "../utils/logger.js";
+import { ZodError } from "zod";
 
 const errorHandler = (err, req, res, next) => {
   let statusCode = err.statusCode || 500;
@@ -56,7 +57,7 @@ const errorHandler = (err, req, res, next) => {
 
     // Only include the stack trace in development mode.
     // NEVER expose this in production.
-    ...(process.env.NODE_ENV === "development" && { stack: err.stack }),
+    // ...(process.env.NODE_ENV === "development" && { stack: err.stack }),
   });
 };
 
