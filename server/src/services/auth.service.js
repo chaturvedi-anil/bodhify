@@ -2,7 +2,7 @@ import User from "../models/user.model.js";
 import { ApiError } from "../utils/ApiError.js";
 import { generateToken } from "../utils/jwt.js";
 
-export const registerUser = async ({ name, email, password }) => {
+export const registerUser = async ({ name, email, password, role }) => {
   const existingUser = await User.findOne({ email });
 
   if (existingUser) {
@@ -13,6 +13,7 @@ export const registerUser = async ({ name, email, password }) => {
     name,
     email,
     password,
+    role,
   });
 
   return createdUser;
@@ -31,7 +32,7 @@ export const loginUser = async ({ email, password }) => {
     throw new ApiError(401, "Invalid credentials");
   }
 
-  const token = generateToken(user._id);
+  const token = generateToken(user._id, user.role);
   return token;
 };
 

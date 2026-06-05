@@ -13,6 +13,7 @@ export const isAuthenticated = async (req, res, next) => {
   try {
     const decoded = verifyToken(token);
     req.user = decoded;
+
     next();
   } catch (error) {
     throw new ApiError(403, "Invalid or expired token.");

@@ -3,13 +3,13 @@ import { env } from "../config/env.js";
 import { logger } from "./logger.js";
 import { ApiError } from "./ApiError.js";
 
-export const generateToken = (userId) => {
+export const generateToken = (userId, role) => {
   try {
     if (!env.JWT_SECRET) {
       throw new ApiError(500, "JWT_SECRET is not configured");
     }
 
-    return jwt.sign({ userId }, env.JWT_SECRET, {
+    return jwt.sign({ userId, role }, env.JWT_SECRET, {
       expiresIn: "1d",
     });
   } catch (error) {
