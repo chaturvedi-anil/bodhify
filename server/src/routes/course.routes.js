@@ -2,7 +2,6 @@ import { Router } from "express";
 import { isAuthenticated } from "../middlewares/auth.middleware.js";
 import validate from "../middlewares/validation.middleware.js";
 import { courseSchemaValidation } from "../validations/course.validation.js";
-import { authorize } from "../middlewares/role.middleware.js";
 import {
   getAllCourses,
   getCourseDetails,
@@ -23,10 +22,6 @@ courseRouter.get("/:courseId", getCourseDetails);
 courseRouter.use(isAuthenticated);
 
 courseRouter.get("/my-courses", getMyCourses);
-
-// Admin/Instructor
-
-courseRouter.use(authorize("admin"));
 
 courseRouter.get("/created-by-me/:instructorId", getCourseCreateByMe);
 courseRouter.post("/", validate(courseSchemaValidation), createCourse); //create
