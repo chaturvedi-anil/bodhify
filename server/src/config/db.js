@@ -3,7 +3,6 @@ import { logger } from "../utils/logger.js";
 import { env } from "./env.js";
 
 const URI = env.MONGODB_URI;
-console.log("url : ", URI);
 export const connectDb = async () => {
   try {
     const conn = await mongoose.connect(URI);

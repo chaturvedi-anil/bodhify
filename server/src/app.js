@@ -2,6 +2,7 @@ import express from "express";
 import cors from "cors";
 import { errorHandler } from "./middlewares/error.middleware.js";
 import authRouter from "./routes/auth.routes.js";
+import courseRouter from "./routes/course.routes.js";
 
 const app = express();
 
@@ -14,6 +15,7 @@ app.get("/api/health", (req, res) => {
 });
 
 app.use("/api/auth", authRouter);
+app.use("/api/courses", courseRouter);
 
 // app.use((req, res, next) => {
 //   next(new ApiError(404, `Route ${req.originalUrl} not found`));
