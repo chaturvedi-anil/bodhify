@@ -1,7 +1,11 @@
 import { Router } from "express";
 import { isAuthenticated } from "../middlewares/auth.middleware.js";
 import validate from "../middlewares/validation.middleware.js";
-import { courseSchemaValidation } from "../validations/course.validation.js";
+import { authorize } from "../middlewares/role.middleware.js";
+import {
+  courseSchemaValidation,
+  updateCourseSchemaValidation,
+} from "../validations/course.validation.js";
 import {
   getAllCourses,
   getCourseDetails,
@@ -21,13 +25,15 @@ courseRouter.get("/:courseId", getCourseDetails);
 // Logged-in users
 courseRouter.use(isAuthenticated);
 
-courseRouter.get("/my-courses", getMyCourses);
+courseRouter.get("/my-courses", authorize("user"), getMyCourses);
 
-courseRouter.get("/created-by-me/:instructorId", getCourseCreateByMe);
+courseRouter.use(authorize("admin"));
+
+courseRouter.get("/admin/created-by-me", getCourseCreateByMe);
 courseRouter.post("/", validate(courseSchemaValidation), createCourse); //create
 courseRouter.patch(
   "/:courseId",
-  validate(courseSchemaValidation),
+  validate(updateCourseSchemaValidation),
   updateCourse,
 ); // update
 courseRouter.delete("/:courseId", deleteCourse);

@@ -13,12 +13,72 @@ export const getCourseDetailsService = async (courseId) => {
   return course;
 };
 
-export const getMyCoursesService = async () => {};
+export const getMyCoursesService = async (userId) => {};
 
-export const createCourseService = async () => {};
+export const getCourseCreateByMeService = async (instructorId) => {
+  const course = await Course.find({ instructorId: instructorId });
+  if (!course) {
+    return res.status(200).json({
+      success: true,
+      message: "You have not created any courses yet.",
+      data: course,
+    });
+  }
+  return course;
+};
 
-export const getCourseCreateByMeService = async () => {};
+export const createCourseService = async (data, instructorId) => {
+  const existingCourse = await Course.findOne({ slug: data.slug });
+  if (existingCourse) {
+    throw new ApiError(409, "Course slug already exists");
+  }
+  const newCourse = await Course.create({
+    ...data,
+    instructorId,
+  });
 
-export const updateCourseService = async () => {};
+  return newCourse;
+};
 
-export const deleteCourseService = async () => {};
+export const updateCourseService = async (data, courseId, instructorId) => {
+  if (data.slug) {
+    const existingSlug = await Course.findOne({
+      slug: data.slug,
+      _id: { $ne: courseId },
+    });
+
+    if (existingSlug) {
+      throw new ApiError(409, "Course slug already exists");
+    }
+  }
+
+  const updatedCourse = await Course.findOneAndUpdate(
+    {
+      _id: courseId,
+      instructorId,
+    },
+    {
+      $set: data,
+    },
+    {
+      after: true,
+      runValidators: true,
+    },
+  );
+
+  if (!updatedCourse) {
+    throw new ApiError(404, "Course not found!");
+  }
+
+  return updatedCourse;
+};
+
+export const deleteCourseService = async (courseId, instructorId) => {
+  const deletedCourse = await Course.findOneAndDelete({
+    _id: courseId,
+    instructorId,
+  });
+  if (!deletedCourse) throw new ApiError(404, "Course not found");
+
+  return deletedCourse;
+};
