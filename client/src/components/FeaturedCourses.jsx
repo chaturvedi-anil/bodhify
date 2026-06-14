@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
+import { useGetCourses } from "@/features/course/api/course.query";
 
 const courses = [
   {
@@ -57,7 +58,12 @@ const courses = [
   },
 ];
 
-const FeaturedCourses = () => {
+const FeaturedCourses = ({ isCourseList }) => {
+  const { isLoading, isError, data } = useGetCourses();
+
+  if (isLoading) return <p>Loading...</p>;
+  if (isError) return <p>Error loading courses</p>;
+
   return (
     <section id="courses" className="section-padding bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -71,17 +77,19 @@ const FeaturedCourses = () => {
               Join our most popular bootcamps and transform your career
             </p>
           </div>
-          <Link
-            href="#courses"
-            className="hidden sm:flex items-center gap-2 text-[#00a892] font-semibold hover:gap-3 transition-all"
-          >
-            View all <ArrowRight className="w-4 h-4" />
-          </Link>
+          {!isCourseList && (
+            <Link
+              to="/courses"
+              className="hidden sm:flex items-center gap-2 text-[#00a892] font-semibold hover:gap-3 transition-all"
+            >
+              View all <ArrowRight className="w-4 h-4" />
+            </Link>
+          )}
         </div>
 
         {/* Course Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {courses.map((course) => (
+          {courses?.map((course) => (
             <div
               key={course.id}
               className="course-card bg-white rounded-2xl border border-gray-100 shadow-sm overflow-hidden flex flex-col"
@@ -141,7 +149,7 @@ const FeaturedCourses = () => {
 
                 {/* CTA */}
                 <Link
-                  href={`#course-${course.id}`}
+                  to={`/course/${course.id}`}
                   className="w-full py-2.5 bg-[#001c52] text-white text-sm font-bold rounded-xl text-center hover:bg-[#020A3F] transition-colors"
                 >
                   View Details

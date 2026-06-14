@@ -93,7 +93,7 @@ const Footer = () => {
           className="text-center font-black font-poppins select-none"
           style={{
             fontSize: "clamp(4rem, 15vw, 14rem)",
-            color: "rgba(255,255,255,0.04)",
+            color: "rgba(255,255,255,0.1)",
             lineHeight: 1,
             letterSpacing: "-0.02em",
           }}

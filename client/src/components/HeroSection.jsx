@@ -46,7 +46,7 @@ const HeroSection = () => {
                 Learn more
               </button>
               <Link
-                href="#courses"
+                to="/courses"
                 className="flex items-center gap-2 px-6 py-3 bg-[#00DDB3] text-[#001c52] font-bold rounded-xl hover:bg-[#00c9a2] transition-all duration-200 shadow-lg"
               >
                 Explore Courses
