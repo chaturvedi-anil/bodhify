@@ -8,5 +8,6 @@ export const getCoursesApi = async () => {
 
 export const getCourseDetailsApi = async (id) => {
   const response = await axiosInstance.get(`/courses/${id}`);
+
   return response.data.data;
 };

@@ -1,23 +1,13 @@
-import HeroSection from "@/components/HeroSection";
-import StatsBar from "@/components/StatsBar";
-import SkillsSection from "@/components/SkillsSection";
-import WhyBodhify from "@/components/WhyBodhify";
-import FeaturedCourses from "@/components/FeaturedCourses";
-import CommunitySection from "@/components/CommunitySection";
-import FAQSection from "@/components/FAQSection";
-import ContactSection from "@/components/ContactSection";
+import HeroSection from "@/components/HomeComponents/HeroSection";
+import WhyBodhify from "@/components/HomeComponents/WhyBodhify";
+import FAQSection from "@/components/HomeComponents/FAQSection";
+
 const HomePage = () => {
   return (
     <>
       <HeroSection />
-      <StatsBar />
-      <SkillsSection />
       <WhyBodhify />
-
-      <FeaturedCourses />
-      <CommunitySection />
-      {/* <FAQSection />      Error to fix*/}
-      <ContactSection />
+      <FAQSection />
     </>
   );
 };
