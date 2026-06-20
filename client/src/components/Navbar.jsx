@@ -1,10 +1,21 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { Menu, X, Search } from "lucide-react";
 import { Button } from "./ui/button";
+import { FaRegArrowAltCircleLeft } from "react-icons/fa";
+import { useLogout } from "@/features/auth/api/auth.query";
 
 const Navbar = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
+  const { pathname } = useLocation();
+  const navigate = useNavigate();
+  const { mutate: logout } = useLogout();
+
+  const handleLogout = () => {
+    localStorage.removeItem("token");
+    logout();
+    navigate("login");
+  };
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-md border-b border-gray-100 shadow-sm">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -48,35 +59,62 @@ const Navbar = () => {
 
           {/* Right side */}
           <div className="hidden md:flex items-center gap-3">
-            <div className="flex items-center gap-2 bg-gray-100 rounded px-3 py-1.5 outline-1">
-              <Search className="w-4 h-4 text-gray-400" />
-              <input
-                type="text"
-                placeholder="Type to search"
-                className="bg-transparent text-sm font-mono tracking-wide text-gray-600 outline-none w-32 placeholder:text-gray-400"
-              />
-            </div>
-            {/* <button className="px-4 py-2 text-sm font-semibold rounded-lg border-2 border-[#001c52] text-[#001c52] hover:bg-[#001c52] hover:text-white transition-all duration-200">
-              Sign up
-            </button>
-            <button className="px-4 py-2 text-sm font-semibold rounded-lg bg-[#001c52] text-white hover:bg-[#020A3F] transition-all duration-200">
-              Log in
-            </button> */}
-            <Button
-              className={
-                "px-4 py-2 text-sm font-mono tracking-wide text-[#001c52] border-gray-300 border cursor-pointer "
-              }
-              variant={"secondary"}
-            >
-              Sign up
-            </Button>
-            <Button
-              className={
-                "px-4 py-2 text-sm font-mono tracking-wide bg-[#001c52] text-white hover:bg-[#020A3F] cursor-pointer"
-              }
-            >
-              Login
-            </Button>
+            {pathname?.includes("/login") || pathname?.includes("/register") ? (
+              <Link to={"/"}>
+                <Button
+                  className={
+                    "px-4 py-2 text-sm font-mono text-white cursor-pointer bg-(--bodhify-navy) hover:bg-(--bodhify-dark-navy)"
+                  }
+                  variant={"default"}
+                >
+                  <FaRegArrowAltCircleLeft className="" /> Back
+                </Button>
+              </Link>
+            ) : ["/", "/courses"].some((route) => pathname !== route) ||
+              /^\/courses\/[^/]+$/.test(pathname) ? (
+              <>
+                <Button
+                  variant="destructive"
+                  className={
+                    "px-4 py-2 text-sm font-mono tracking-wide cursor-pointer"
+                  }
+                  onClick={handleLogout}
+                >
+                  Logout
+                </Button>
+              </>
+            ) : (
+              <>
+                <div className="flex items-center gap-2 bg-gray-100 rounded px-3 py-1.5 outline-1">
+                  <Search className="w-4 h-3 text-gray-400" />
+                  <input
+                    type="text"
+                    placeholder="Type to search"
+                    className="bg-transparent text-sm font-mono tracking-wide text-gray-600 outline-none w-32 placeholder:text-gray-400"
+                  />
+                </div>
+
+                <Link to={"/register"}>
+                  <Button
+                    className={
+                      "px-4 py-2 text-sm font-mono tracking-wide text-[#001c52] border-gray-300 border cursor-pointer "
+                    }
+                    variant={"secondary"}
+                  >
+                    Sign up
+                  </Button>
+                </Link>
+                <Link to={"/login"}>
+                  <Button
+                    className={
+                      "px-4 py-2 text-sm font-mono tracking-wide bg-[#001c52] text-white hover:bg-[#020A3F] cursor-pointer"
+                    }
+                  >
+                    Login
+                  </Button>
+                </Link>
+              </>
+            )}
           </div>
 
           {/* Mobile menu button */}
@@ -118,21 +156,26 @@ const Navbar = () => {
             Community
           </Link>
           <div className="flex gap-2 pt-2">
-            <Button
-              className={
-                "flex-1 py-2 text-sm font-mono tracking-wide text-[#001c52] border-gray-300 border cursor-pointer "
-              }
-              variant={"secondary"}
-            >
-              Sign up
-            </Button>
-            <Button
-              className={
-                "flex-1 py-2 text-sm font-mono tracking-wide bg-[#001c52] text-white hover:bg-[#020A3F] cursor-pointer"
-              }
-            >
-              Login
-            </Button>
+            <Link to={"/register"}>
+              <Button
+                className={
+                  "flex-1 py-2 text-sm font-mono tracking-wide text-[#001c52] border-gray-300 border cursor-pointer "
+                }
+                variant={"secondary"}
+              >
+                Sign up
+              </Button>
+            </Link>
+            <Link to={"login"}>
+              {" "}
+              <Button
+                className={
+                  "flex-1 py-2 text-sm font-mono tracking-wide bg-[#001c52] text-white hover:bg-[#020A3F] cursor-pointer"
+                }
+              >
+                Login
+              </Button>
+            </Link>
           </div>
         </div>
       )}
