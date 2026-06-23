@@ -11,15 +11,23 @@ const Navbar = () => {
   const navigate = useNavigate();
   const { mutate: logout } = useLogout();
 
+  const isAuth = !!localStorage.getItem("token");
+
+  const isAuthRoute = pathname === "/login" || pathname === "/register";
+
+  const isPublicRoute = pathname === "/" || pathname === "/courses";
+
   const handleLogout = () => {
     localStorage.removeItem("token");
     logout();
-    navigate("login");
+    navigate("/login");
   };
+
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-md border-b border-gray-100 shadow-sm">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
+          {/* Left Side */}
           <div className="flex items-center">
             {/* Logo */}
             <Link to="/" className="flex items-center gap-1 shrink-0">
@@ -28,7 +36,10 @@ const Navbar = () => {
               </span>
               <span
                 className="text-2xl font-black font-mono tracking-wide px-1 rounded"
-                style={{ color: "#00a892", background: "rgba(0,168,146,0.1)" }}
+                style={{
+                  color: "#00a892",
+                  background: "rgba(0,168,146,0.1)",
+                }}
               >
                 fy
               </span>
@@ -38,78 +49,76 @@ const Navbar = () => {
             <div className="hidden md:flex items-center gap-8 ml-8">
               <Link
                 to="/"
-                className="nav-link text-sm font-medium font-mono tracking-wide text-gray-700 hover:text-[#001c52] transition-colors"
+                className="text-sm font-medium font-mono tracking-wide text-gray-700 hover:text-[#001c52] transition-colors"
               >
                 Home
               </Link>
+
               <Link
                 to="/courses"
-                className="nav-link text-sm font-medium font-mono tracking-wide text-gray-700 hover:text-[#001c52] transition-colors"
+                className="text-sm font-medium font-mono tracking-wide text-gray-700 hover:text-[#001c52] transition-colors"
               >
                 Courses
               </Link>
+
               <Link
                 to="/"
-                className="nav-link text-sm font-medium font-mono tracking-wide text-gray-700 hover:text-[#001c52] transition-colors"
+                className="text-sm font-medium font-mono tracking-wide text-gray-700 hover:text-[#001c52] transition-colors"
               >
                 Community
               </Link>
             </div>
           </div>
 
-          {/* Right side */}
+          {/* Desktop Right Side */}
           <div className="hidden md:flex items-center gap-3">
-            {pathname?.includes("/login") || pathname?.includes("/register") ? (
-              <Link to={"/"}>
-                <Button
-                  className={
-                    "px-4 py-2 text-sm font-mono text-white cursor-pointer bg-(--bodhify-navy) hover:bg-(--bodhify-dark-navy)"
-                  }
-                  variant={"default"}
-                >
-                  <FaRegArrowAltCircleLeft className="" /> Back
+            {/* Back button on login/register */}
+            {isAuthRoute && (
+              <Link to="/">
+                <Button className="px-4 py-2 text-sm font-mono text-white bg-(--bodhify-navy) hover:bg-(--bodhify-dark-navy)">
+                  <FaRegArrowAltCircleLeft />
+                  Back
                 </Button>
               </Link>
-            ) : ["/", "/courses"].some((route) => pathname !== route) ||
-              /^\/courses\/[^/]+$/.test(pathname) ? (
+            )}
+
+            {/* Logged-in user */}
+            {isAuth && !isAuthRoute && (
               <>
                 <Button
                   variant="destructive"
-                  className={
-                    "px-4 py-2 text-sm font-mono tracking-wide cursor-pointer"
-                  }
+                  className="px-4 py-2 text-sm font-mono tracking-wide cursor-pointer"
                   onClick={handleLogout}
                 >
                   Logout
                 </Button>
               </>
-            ) : (
-              <>
-                <div className="flex items-center gap-2 bg-gray-100 rounded px-3 py-1.5 outline-1">
-                  <Search className="w-4 h-3 text-gray-400" />
-                  <input
-                    type="text"
-                    placeholder="Type to search"
-                    className="bg-transparent text-sm font-mono tracking-wide text-gray-600 outline-none w-32 placeholder:text-gray-400"
-                  />
-                </div>
+            )}
 
-                <Link to={"/register"}>
+            {/* Public routes when not logged in */}
+            {!isAuth && isPublicRoute && !isAuthRoute && (
+              <>
+                {pathname === "/courses" && (
+                  <div className="flex items-center gap-2 bg-gray-100 rounded px-3 py-1.5 outline-1">
+                    <Search className="w-4 h-3 text-gray-400" />
+                    <input
+                      type="text"
+                      placeholder="Type to search"
+                      className="bg-transparent text-sm font-mono tracking-wide text-gray-600 outline-none w-32 placeholder:text-gray-400"
+                    />
+                  </div>
+                )}
+                <Link to="/register">
                   <Button
-                    className={
-                      "px-4 py-2 text-sm font-mono tracking-wide text-[#001c52] border-gray-300 border cursor-pointer "
-                    }
-                    variant={"secondary"}
+                    className="px-4 py-2 text-sm font-mono tracking-wide text-[#001c52] border-gray-300 border cursor-pointer"
+                    variant="secondary"
                   >
                     Sign up
                   </Button>
                 </Link>
-                <Link to={"/login"}>
-                  <Button
-                    className={
-                      "px-4 py-2 text-sm font-mono tracking-wide bg-[#001c52] text-white hover:bg-[#020A3F] cursor-pointer"
-                    }
-                  >
+
+                <Link to="/login">
+                  <Button className="px-4 py-2 text-sm font-mono tracking-wide bg-[#001c52] text-white hover:bg-[#020A3F] cursor-pointer">
                     Login
                   </Button>
                 </Link>
@@ -141,6 +150,7 @@ const Navbar = () => {
           >
             Home
           </Link>
+
           <Link
             to="/courses"
             className="block text-sm font-medium font-mono tracking-wide text-gray-700 py-2"
@@ -148,35 +158,55 @@ const Navbar = () => {
           >
             Courses
           </Link>
+
           <Link
-            to="#community"
+            to="/"
             className="block text-sm font-medium font-mono tracking-wide text-gray-700 py-2"
             onClick={() => setMobileOpen(false)}
           >
             Community
           </Link>
-          <div className="flex gap-2 pt-2">
-            <Link to={"/register"}>
-              <Button
-                className={
-                  "flex-1 py-2 text-sm font-mono tracking-wide text-[#001c52] border-gray-300 border cursor-pointer "
-                }
-                variant={"secondary"}
-              >
-                Sign up
+
+          {/* Back button for auth routes */}
+          {isAuthRoute && (
+            <Link to="/" onClick={() => setMobileOpen(false)}>
+              <Button className="w-full bg-(--bodhify-navy) text-white">
+                <FaRegArrowAltCircleLeft />
+                Back
               </Button>
             </Link>
-            <Link to={"login"}>
-              {" "}
-              <Button
-                className={
-                  "flex-1 py-2 text-sm font-mono tracking-wide bg-[#001c52] text-white hover:bg-[#020A3F] cursor-pointer"
-                }
-              >
-                Login
-              </Button>
-            </Link>
-          </div>
+          )}
+
+          {/* Logged in mobile */}
+          {isAuth && !isAuthRoute && (
+            <Button
+              variant="destructive"
+              className="w-full"
+              onClick={handleLogout}
+            >
+              Logout
+            </Button>
+          )}
+
+          {/* Public mobile */}
+          {!isAuth && isPublicRoute && !isAuthRoute && (
+            <div className="flex gap-2 pt-2">
+              <Link to="/register" className="flex-1">
+                <Button
+                  className="w-full text-[#001c52] border-gray-300 border"
+                  variant="secondary"
+                >
+                  Sign up
+                </Button>
+              </Link>
+
+              <Link to="/login" className="flex-1">
+                <Button className="w-full bg-[#001c52] text-white hover:bg-[#020A3F]">
+                  Login
+                </Button>
+              </Link>
+            </div>
+          )}
         </div>
       )}
     </nav>
