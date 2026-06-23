@@ -48,7 +48,7 @@ const RegisterPage = () => {
     const { confirmPassword, ...paylaod } = data;
     registerUser(paylaod, {
       onSuccess: (response) => {
-        console.log("registered successfully:", response);
+        notify.success("Registered successfully");
         reset();
         navigate("/login");
       },
@@ -188,7 +188,13 @@ const RegisterPage = () => {
                   type="submit"
                   className="w-full h-10 rounded-xl text-base font-mono font-medium cursor-pointer bg-(--bodhify-navy) hover:bg-(--bodhify-dark-navy)"
                 >
-                  Create Account
+                  {isPending ? (
+                    <>
+                      Please wait <Spinner className="size-4 ml-1" />
+                    </>
+                  ) : (
+                    "Create Account"
+                  )}
                 </Button>
 
                 {/* Login Link */}

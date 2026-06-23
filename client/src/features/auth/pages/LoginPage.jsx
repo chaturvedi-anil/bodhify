@@ -19,6 +19,8 @@ import { useForm } from "react-hook-form";
 import { useLogin } from "../api/auth.query";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { loginSchema } from "../schema/authSchema";
+import { notify } from "@/lib/toast";
+import { Spinner } from "@/components/ui/spinner";
 
 const Login = () => {
   const {
@@ -36,9 +38,13 @@ const Login = () => {
   const onSubmit = (data) => {
     loginUser(data, {
       onSuccess: (response) => {
+        notify.success(response.message);
         localStorage.setItem("token", response.token);
         reset();
         navigate("/dashboard");
+      },
+      onError: (error) => {
+        notify.error(error.message);
       },
     });
   };
@@ -124,8 +130,15 @@ const Login = () => {
                 <Button
                   type="submit"
                   className="w-full h-10 rounded-xl text-base font-mono font-medium cursor-pointer bg-(--bodhify-navy) hover:bg-(--bodhify-dark-navy)"
+                  disabled={isPending}
                 >
-                  Login
+                  {isPending ? (
+                    <>
+                      Please wait <Spinner className="size-4 ml-1" />
+                    </>
+                  ) : (
+                    "Login"
+                  )}
                 </Button>
 
                 {/* Register Link */}
