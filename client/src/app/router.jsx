@@ -8,7 +8,10 @@ import AuthLayout from "@/layouts/AuthLayout";
 import LoginPage from "@/features/auth/pages/LoginPage";
 import RegisterPage from "@/features/auth/pages/RegisterPage";
 import ProtectedRoute from "@/routes/ProtectedRoute";
-import DashboardLayout from "@/layouts/DashboardLayout";
+import DashboardLayout from "@/features/student/layouts/DashboardLayout";
+import MyCoursesPage from "@/features/student/pages/MyCoursePage";
+import OverviewPage from "@/features/student/pages/OverviewPage";
+import ProfilePage from "@/features/student/pages/ProfilePage";
 
 const router = createBrowserRouter([
   {
@@ -38,7 +41,11 @@ const router = createBrowserRouter([
         <DashboardLayout />
       </ProtectedRoute>
     ),
-    children: [],
+    children: [
+      { index: true, element: <OverviewPage /> },
+      { path: "my-courses", element: <MyCoursesPage /> },
+      { path: "profile", element: <ProfilePage /> },
+    ],
   },
 ]);
 
