@@ -85,6 +85,13 @@ const Navbar = () => {
             {/* Logged-in user */}
             {isAuth && !isAuthRoute && (
               <>
+                {pathname !== "/dashboard" && (
+                  <Link to="/dashboard">
+                    <Button className="px-4 py-2 text-sm font-mono tracking-wide bg-[#001c52] text-white hover:bg-[#020A3F] cursor-pointer">
+                      Dashboard
+                    </Button>
+                  </Link>
+                )}
                 <Button
                   variant="destructive"
                   className="px-4 py-2 text-sm font-mono tracking-wide cursor-pointer"
