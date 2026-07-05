@@ -1,14 +1,14 @@
 import { Router } from "express";
-import { login, me, register } from "../contollers/auth.controller.js";
+import {
+  login,
+  getMe,
+  register,
+  getAllUsers,
+} from "../contollers/auth.controller.js";
 import validate from "../middlewares/validation.middleware.js";
 import { isAuthenticated } from "../middlewares/auth.middleware.js";
 import { authorize } from "../middlewares/role.middleware.js";
-import {
-  loginSchema,
-  registerSchema,
-  getAllUsers,
-  getMe,
-} from "../validations/auth.validation.js";
+import { loginSchema, registerSchema } from "../validations/auth.validation.js";
 
 const authRouter = Router();
 
