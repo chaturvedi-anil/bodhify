@@ -1,0 +1,809 @@
+[
+  {
+    "title": "Complete MERN Stack Development Bootcamp",
+    "subTitle": "Become a Full Stack Developer by building real-world applications",
+    "slug": "complete-mern-stack-development-bootcamp",
+    "description": "Master MongoDB, Express.js, React.js, and Node.js by building production-ready full-stack applications. Learn APIs, authentication, state management, deployment, and scalable architecture.",
+    "subject": "Web Development",
+    "price": 4999,
+    "originalPrice": 9999,
+    "discount": 50,
+
+    "courseLanguage": "English",
+    "level": "Beginner",
+    "thumbnail": {
+      "url": "https://images.unsplash.com/photo-1516321318423-f06f85e504b3",
+      "publicId": "mern-stack-course"
+    },
+    "learningOutcomes": [
+      "Build full stack apps",
+      "Create APIs",
+      "Authentication",
+      "State management",
+      "Deployment"
+    ],
+    "prerequisites": ["HTML", "CSS", "JavaScript Basics"],
+    "tags": ["MERN", "React", "Node", "MongoDB"],
+    "duration": 80,
+    "isPublished": true,
+    "enrolledStudents": [],
+    "whatYouWillLearn": [
+      {
+        "subjectName": "Frontend Development",
+        "topics": ["React", "Hooks", "Redux", "Routing"],
+        "projects": ["Portfolio App", "Blog App", "E-commerce UI"],
+        "liveDay": "Monday"
+      },
+      {
+        "subjectName": "Backend Development",
+        "topics": ["Node.js", "Express", "JWT", "REST API"],
+        "projects": ["Auth API", "Payment API", "Blog API"],
+        "liveDay": "Wednesday"
+      },
+      {
+        "subjectName": "Database Integration",
+        "topics": ["MongoDB CRUD", "Aggregation", "Schema Design"],
+        "projects": ["User System", "Order System", "Product Catalog"],
+        "liveDay": "Friday"
+      }
+    ],
+    "whoIsThisFor": [
+      {
+        "subTitle": "Best for",
+        "targetAudience": [
+          {
+            "title": "Beginners",
+            "description": "Start full stack development"
+          },
+          { "title": "Students", "description": "Build portfolio projects" },
+          { "title": "Developers", "description": "Upskill in MERN stack" }
+        ]
+      }
+    ],
+    "careerOutcomes": [
+      {
+        "subTitle": "Career Opportunities",
+        "outcomes": [
+          { "title": "MERN Developer", "description": "Build full stack apps" },
+          {
+            "title": "Frontend Developer",
+            "description": "Work on React apps"
+          },
+          { "title": "Backend Developer", "description": "Develop APIs" },
+          {
+            "title": "Software Engineer",
+            "description": "Build scalable products"
+          },
+          { "title": "Freelancer", "description": "Work with clients" },
+          { "title": "Startup Founder", "description": "Launch your SaaS" }
+        ]
+      }
+    ]
+  },
+  {
+    "title": "Advanced React.js Masterclass",
+    "subTitle": "Master React ecosystem and scalable frontend architecture",
+    "slug": "advanced-react-js-masterclass",
+    "description": "Learn advanced React concepts including performance optimization, hooks, Redux Toolkit, testing, SSR, and scalable frontend design patterns.",
+    "subject": "Frontend Development",
+    "price": 3999,
+    "originalPrice": 7999,
+    "discount": 50,
+
+    "courseLanguage": "English",
+    "level": "Intermediate",
+    "thumbnail": {
+      "url": "https://images.unsplash.com/photo-1633356122544-f134324a6cee",
+      "publicId": "react-masterclass"
+    },
+    "learningOutcomes": [
+      "Hooks mastery",
+      "Redux Toolkit",
+      "Optimization",
+      "Testing",
+      "SSR"
+    ],
+    "prerequisites": ["JavaScript", "Basic React"],
+    "tags": ["React", "Frontend"],
+    "duration": 60,
+    "isPublished": true,
+    "enrolledStudents": [],
+    "whatYouWillLearn": [
+      {
+        "subjectName": "Core React",
+        "topics": ["Hooks", "Lifecycle", "Context API"],
+        "projects": ["Task Manager", "Weather App", "Notes App"],
+        "liveDay": "Tuesday"
+      },
+      {
+        "subjectName": "State Management",
+        "topics": ["Redux Toolkit", "Store", "Slices"],
+        "projects": ["Cart App", "Dashboard", "Auth System"],
+        "liveDay": "Thursday"
+      },
+      {
+        "subjectName": "Optimization & Testing",
+        "topics": ["Jest", "Memoization", "Lazy Loading"],
+        "projects": ["Test Suite", "Optimized App", "SSR App"],
+        "liveDay": "Saturday"
+      }
+    ],
+    "whoIsThisFor": [
+      {
+        "subTitle": "Ideal for",
+        "targetAudience": [
+          {
+            "title": "Frontend Developers",
+            "description": "Advance React knowledge"
+          },
+          { "title": "Freelancers", "description": "Build client apps" },
+          { "title": "Students", "description": "Prepare for jobs" }
+        ]
+      }
+    ],
+    "careerOutcomes": [
+      {
+        "subTitle": "Career Growth",
+        "outcomes": [
+          { "title": "React Developer", "description": "Build SPAs" },
+          {
+            "title": "Frontend Engineer",
+            "description": "Design scalable UIs"
+          },
+          {
+            "title": "UI Architect",
+            "description": "Lead frontend architecture"
+          },
+          { "title": "Freelancer", "description": "Build frontend apps" },
+          { "title": "Software Engineer", "description": "Join product teams" },
+          { "title": "Tech Lead", "description": "Lead frontend teams" }
+        ]
+      }
+    ]
+  },
+  {
+    "title": "Node.js Backend Engineering",
+    "subTitle": "Master backend development and scalable APIs",
+    "slug": "node-js-backend-engineering",
+    "description": "Build secure and scalable backend systems using Node.js, Express, MongoDB, WebSockets, queues, and deployment strategies.",
+    "subject": "Backend Development",
+    "price": 4499,
+    "originalPrice": 8999,
+    "discount": 50,
+
+    "courseLanguage": "English",
+    "level": "Intermediate",
+    "thumbnail": {
+      "url": "https://images.unsplash.com/photo-1555949963-aa79dcee981c",
+      "publicId": "node-backend-course"
+    },
+    "learningOutcomes": [
+      "REST APIs",
+      "Authentication",
+      "Realtime apps",
+      "Queues",
+      "Deployment"
+    ],
+    "prerequisites": ["JavaScript"],
+    "tags": ["Node", "Backend", "Express"],
+    "duration": 70,
+    "isPublished": true,
+    "enrolledStudents": [],
+    "whatYouWillLearn": [
+      {
+        "subjectName": "API Development",
+        "topics": ["REST", "CRUD", "Validation"],
+        "projects": ["Auth API", "Blog API", "Invoice API"],
+        "liveDay": "Monday"
+      },
+      {
+        "subjectName": "Realtime Applications",
+        "topics": ["Socket.io", "Events", "Notifications"],
+        "projects": ["Chat App", "Live Tracker", "Realtime Dashboard"],
+        "liveDay": "Wednesday"
+      },
+      {
+        "subjectName": "Deployment",
+        "topics": ["Docker", "PM2", "NGINX"],
+        "projects": ["Deploy API", "CI/CD Setup", "Production Server"],
+        "liveDay": "Friday"
+      }
+    ],
+    "whoIsThisFor": [
+      {
+        "subTitle": "Who is this for",
+        "targetAudience": [
+          {
+            "title": "Backend Developers",
+            "description": "Improve backend skills"
+          },
+          { "title": "Students", "description": "Learn production backend" },
+          {
+            "title": "Full Stack Developers",
+            "description": "Strengthen backend knowledge"
+          }
+        ]
+      }
+    ],
+    "careerOutcomes": [
+      {
+        "subTitle": "Jobs",
+        "outcomes": [
+          { "title": "Backend Engineer", "description": "Build APIs" },
+          {
+            "title": "Node.js Developer",
+            "description": "Work on backend systems"
+          },
+          { "title": "API Engineer", "description": "Design secure APIs" },
+          {
+            "title": "Software Engineer",
+            "description": "Develop backend logic"
+          },
+          {
+            "title": "DevOps Engineer",
+            "description": "Deploy backend systems"
+          },
+          { "title": "Consultant", "description": "Guide backend architecture" }
+        ]
+      }
+    ]
+  },
+  {
+    "title": "DevOps and Kubernetes Mastery",
+    "subTitle": "Master cloud-native deployment and automation",
+    "slug": "devops-and-kubernetes-mastery",
+    "description": "Learn Docker, Kubernetes, CI/CD pipelines, monitoring, and cloud-native infrastructure automation.",
+    "subject": "DevOps",
+    "price": 5999,
+    "originalPrice": 11999,
+    "discount": 50,
+
+    "courseLanguage": "English",
+    "level": "Intermediate",
+    "thumbnail": {
+      "url": "https://images.unsplash.com/photo-1667372393119-3d4c48d07fc9",
+      "publicId": "devops-k8s-course"
+    },
+    "learningOutcomes": [
+      "Docker",
+      "Kubernetes",
+      "CI/CD",
+      "Monitoring",
+      "Cloud deployment"
+    ],
+    "prerequisites": ["Linux Basics"],
+    "tags": ["DevOps", "Docker", "Kubernetes"],
+    "duration": 90,
+    "isPublished": true,
+    "enrolledStudents": [],
+    "whatYouWillLearn": [
+      {
+        "subjectName": "Docker",
+        "topics": ["Containers", "Volumes", "Networking"],
+        "projects": ["Containerized App", "Compose Setup", "Microservice App"],
+        "liveDay": "Monday"
+      },
+      {
+        "subjectName": "Kubernetes",
+        "topics": ["Pods", "Deployments", "Services"],
+        "projects": ["Deploy App", "Scale App", "Ingress Setup"],
+        "liveDay": "Wednesday"
+      },
+      {
+        "subjectName": "CI/CD",
+        "topics": ["GitHub Actions", "Jenkins", "Pipelines"],
+        "projects": ["Build Pipeline", "Deploy Pipeline", "Monitor Pipeline"],
+        "liveDay": "Friday"
+      }
+    ],
+    "whoIsThisFor": [
+      {
+        "subTitle": "Audience",
+        "targetAudience": [
+          { "title": "Developers", "description": "Learn deployment" },
+          { "title": "DevOps Engineers", "description": "Master automation" },
+          { "title": "SysAdmins", "description": "Move into DevOps" }
+        ]
+      }
+    ],
+    "careerOutcomes": [
+      {
+        "subTitle": "Roles",
+        "outcomes": [
+          { "title": "DevOps Engineer", "description": "Manage CI/CD" },
+          { "title": "Cloud Engineer", "description": "Deploy cloud apps" },
+          {
+            "title": "Platform Engineer",
+            "description": "Build internal platforms"
+          },
+          { "title": "SRE", "description": "Maintain reliability" },
+          { "title": "Kubernetes Admin", "description": "Manage clusters" },
+          {
+            "title": "Infrastructure Engineer",
+            "description": "Automate infrastructure"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "title": "Python for Software Development",
+    "subTitle": "Learn Python by building automation and APIs",
+    "slug": "python-for-software-development",
+    "description": "Learn Python fundamentals, object-oriented programming, APIs, automation, and scripting through practical projects.",
+    "subject": "Programming",
+    "price": 2999,
+    "originalPrice": 5999,
+    "discount": 50,
+
+    "courseLanguage": "English",
+    "level": "Beginner",
+    "thumbnail": {
+      "url": "https://images.unsplash.com/photo-1526379095098-d400fd0bf935",
+      "publicId": "python-course"
+    },
+    "learningOutcomes": [
+      "Python Basics",
+      "OOP",
+      "Automation",
+      "APIs",
+      "Scripting"
+    ],
+    "prerequisites": ["None"],
+    "tags": ["Python", "Programming"],
+    "duration": 50,
+    "isPublished": true,
+    "enrolledStudents": [],
+    "whatYouWillLearn": [
+      {
+        "subjectName": "Python Fundamentals",
+        "topics": ["Variables", "Loops", "Functions"],
+        "projects": ["Calculator", "Expense Tracker", "CLI App"],
+        "liveDay": "Tuesday"
+      },
+      {
+        "subjectName": "Object Oriented Programming",
+        "topics": ["Classes", "Inheritance", "Polymorphism"],
+        "projects": ["Library System", "Bank App", "School App"],
+        "liveDay": "Thursday"
+      },
+      {
+        "subjectName": "Automation",
+        "topics": ["File Handling", "Emails", "Web Scraping"],
+        "projects": ["PDF Generator", "Email Sender", "Scraper Tool"],
+        "liveDay": "Saturday"
+      }
+    ],
+    "whoIsThisFor": [
+      {
+        "subTitle": "Best for",
+        "targetAudience": [
+          { "title": "Beginners", "description": "Start coding" },
+          { "title": "Students", "description": "Learn Python" },
+          { "title": "Developers", "description": "Automate workflows" }
+        ]
+      }
+    ],
+    "careerOutcomes": [
+      {
+        "subTitle": "Career Options",
+        "outcomes": [
+          { "title": "Python Developer", "description": "Build applications" },
+          { "title": "Automation Engineer", "description": "Automate tasks" },
+          { "title": "Backend Developer", "description": "Build APIs" },
+          { "title": "QA Engineer", "description": "Test automation" },
+          { "title": "Software Engineer", "description": "Develop products" },
+          { "title": "Data Analyst", "description": "Analyze datasets" }
+        ]
+      }
+    ]
+  },
+  {
+    "title": "AWS Cloud Engineering",
+    "subTitle": "Master AWS services and cloud architecture",
+    "slug": "aws-cloud-engineering",
+    "description": "Learn core AWS services, deployment, networking, IAM, EC2, S3, and cloud-native architecture.",
+    "subject": "Cloud Computing",
+    "price": 5499,
+    "originalPrice": 10999,
+    "discount": 50,
+
+    "courseLanguage": "English",
+    "level": "Intermediate",
+    "thumbnail": {
+      "url": "https://images.unsplash.com/photo-1451187580459-43490279c0fa",
+      "publicId": "aws-course"
+    },
+    "learningOutcomes": ["EC2", "S3", "IAM", "VPC", "Deployment"],
+    "prerequisites": ["Linux Basics"],
+    "tags": ["AWS", "Cloud"],
+    "duration": 65,
+    "isPublished": true,
+    "enrolledStudents": [],
+    "whatYouWillLearn": [
+      {
+        "subjectName": "Core AWS Services",
+        "topics": ["EC2", "S3", "RDS"],
+        "projects": ["Host Website", "Store Files", "DB Setup"],
+        "liveDay": "Monday"
+      },
+      {
+        "subjectName": "Security",
+        "topics": ["IAM", "Policies", "Roles"],
+        "projects": ["Secure App", "Role Access", "Permissions Setup"],
+        "liveDay": "Wednesday"
+      },
+      {
+        "subjectName": "Networking",
+        "topics": ["VPC", "Load Balancer", "Route53"],
+        "projects": ["Private Network", "Traffic Routing", "Scaling App"],
+        "liveDay": "Friday"
+      }
+    ],
+    "whoIsThisFor": [
+      {
+        "subTitle": "Audience",
+        "targetAudience": [
+          { "title": "Cloud Beginners", "description": "Start with AWS" },
+          { "title": "Developers", "description": "Deploy apps on cloud" },
+          {
+            "title": "DevOps Engineers",
+            "description": "Learn AWS infrastructure"
+          }
+        ]
+      }
+    ],
+    "careerOutcomes": [
+      {
+        "subTitle": "Cloud Careers",
+        "outcomes": [
+          { "title": "Cloud Engineer", "description": "Build cloud systems" },
+          { "title": "AWS Developer", "description": "Work on AWS" },
+          { "title": "DevOps Engineer", "description": "Manage deployments" },
+          {
+            "title": "Solutions Architect",
+            "description": "Design cloud architecture"
+          },
+          { "title": "SRE", "description": "Ensure uptime" },
+          {
+            "title": "Infrastructure Engineer",
+            "description": "Build cloud infra"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "title": "Data Structures and Algorithms Masterclass",
+    "subTitle": "Crack coding interviews and build problem-solving skills",
+    "slug": "data-structures-and-algorithms-masterclass",
+    "description": "Master arrays, linked lists, trees, graphs, dynamic programming, and interview preparation.",
+    "subject": "Computer Science",
+    "price": 3499,
+    "originalPrice": 6999,
+    "discount": 50,
+
+    "courseLanguage": "English",
+    "level": "Intermediate",
+    "thumbnail": {
+      "url": "https://images.unsplash.com/photo-1515879218367-8466d910aaa4",
+      "publicId": "dsa-course"
+    },
+    "learningOutcomes": ["Problem solving", "Arrays", "Trees", "Graphs", "DP"],
+    "prerequisites": ["Basic Programming"],
+    "tags": ["DSA", "Algorithms"],
+    "duration": 75,
+    "isPublished": true,
+    "enrolledStudents": [],
+    "whatYouWillLearn": [
+      {
+        "subjectName": "Basic Data Structures",
+        "topics": ["Arrays", "Stacks", "Queues"],
+        "projects": ["Array Utils", "Stack App", "Queue System"],
+        "liveDay": "Tuesday"
+      },
+      {
+        "subjectName": "Advanced Structures",
+        "topics": ["Trees", "Graphs", "Heaps"],
+        "projects": ["Tree Traversal", "Graph Search", "Heap Sort"],
+        "liveDay": "Thursday"
+      },
+      {
+        "subjectName": "Dynamic Programming",
+        "topics": ["Memoization", "Tabulation", "Optimization"],
+        "projects": ["Knapsack", "LCS", "Coin Change"],
+        "liveDay": "Saturday"
+      }
+    ],
+    "whoIsThisFor": [
+      {
+        "subTitle": "Who should learn",
+        "targetAudience": [
+          { "title": "Students", "description": "Prepare for placements" },
+          { "title": "Developers", "description": "Improve problem solving" },
+          {
+            "title": "Interview Candidates",
+            "description": "Crack coding interviews"
+          }
+        ]
+      }
+    ],
+    "careerOutcomes": [
+      {
+        "subTitle": "Career Growth",
+        "outcomes": [
+          {
+            "title": "Software Engineer",
+            "description": "Solve complex problems"
+          },
+          {
+            "title": "Competitive Programmer",
+            "description": "Participate in contests"
+          },
+          { "title": "Backend Engineer", "description": "Optimize systems" },
+          { "title": "Frontend Engineer", "description": "Improve logic" },
+          {
+            "title": "Full Stack Developer",
+            "description": "Write efficient code"
+          },
+          { "title": "Tech Lead", "description": "Lead technical decisions" }
+        ]
+      }
+    ]
+  },
+  {
+    "title": "System Design for Developers",
+    "subTitle": "Learn scalable architecture and distributed systems",
+    "slug": "system-design-for-developers",
+    "description": "Master scalability, load balancing, caching, databases, microservices, and distributed systems design.",
+    "subject": "System Design",
+    "price": 6499,
+    "originalPrice": 12999,
+    "discount": 50,
+
+    "courseLanguage": "English",
+    "level": "Advanced",
+    "thumbnail": {
+      "url": "https://images.unsplash.com/photo-1518770660439-4636190af475",
+      "publicId": "system-design-course"
+    },
+    "learningOutcomes": [
+      "Scalability",
+      "Caching",
+      "Databases",
+      "Load balancing",
+      "Microservices"
+    ],
+    "prerequisites": ["Backend Basics"],
+    "tags": ["System Design", "Architecture"],
+    "duration": 70,
+    "isPublished": true,
+    "enrolledStudents": [],
+    "whatYouWillLearn": [
+      {
+        "subjectName": "Scalability",
+        "topics": ["Horizontal Scaling", "Vertical Scaling", "Caching"],
+        "projects": ["Cache System", "Scale API", "Traffic Handler"],
+        "liveDay": "Monday"
+      },
+      {
+        "subjectName": "Distributed Systems",
+        "topics": ["Queues", "Events", "Consistency"],
+        "projects": ["Queue System", "Event Bus", "Distributed Lock"],
+        "liveDay": "Wednesday"
+      },
+      {
+        "subjectName": "Microservices",
+        "topics": ["Service Design", "Communication", "Resilience"],
+        "projects": ["User Service", "Payment Service", "Notification Service"],
+        "liveDay": "Friday"
+      }
+    ],
+    "whoIsThisFor": [
+      {
+        "subTitle": "Target Audience",
+        "targetAudience": [
+          {
+            "title": "Backend Developers",
+            "description": "Design scalable systems"
+          },
+          { "title": "Senior Developers", "description": "Learn architecture" },
+          { "title": "Tech Leads", "description": "Improve system planning" }
+        ]
+      }
+    ],
+    "careerOutcomes": [
+      {
+        "subTitle": "Future Roles",
+        "outcomes": [
+          {
+            "title": "System Architect",
+            "description": "Design scalable systems"
+          },
+          {
+            "title": "Backend Engineer",
+            "description": "Build distributed systems"
+          },
+          { "title": "Tech Lead", "description": "Guide architecture" },
+          {
+            "title": "Software Engineer",
+            "description": "Build reliable apps"
+          },
+          {
+            "title": "Platform Engineer",
+            "description": "Build internal systems"
+          },
+          {
+            "title": "Engineering Manager",
+            "description": "Lead technical teams"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "title": "Next.js Fullstack Development",
+    "subTitle": "Build modern SSR applications with Next.js",
+    "slug": "next-js-fullstack-development",
+    "description": "Learn Next.js, SSR, API routes, authentication, Prisma, and deployment for production-ready applications.",
+    "subject": "Fullstack Development",
+    "price": 4599,
+    "originalPrice": 8999,
+    "discount": 49,
+
+    "courseLanguage": "English",
+    "level": "Intermediate",
+    "thumbnail": {
+      "url": "https://images.unsplash.com/photo-1498050108023-c5249f4df085",
+      "publicId": "nextjs-course"
+    },
+    "learningOutcomes": ["SSR", "API Routes", "Prisma", "Auth", "Deployment"],
+    "prerequisites": ["React Basics"],
+    "tags": ["Next.js", "Fullstack"],
+    "duration": 65,
+    "isPublished": true,
+    "enrolledStudents": [],
+    "whatYouWillLearn": [
+      {
+        "subjectName": "Core Next.js",
+        "topics": ["Pages", "SSR", "Routing"],
+        "projects": ["Blog App", "Portfolio Site", "Dashboard"],
+        "liveDay": "Tuesday"
+      },
+      {
+        "subjectName": "Backend Features",
+        "topics": ["API Routes", "Auth", "Database"],
+        "projects": ["Auth System", "CRUD App", "CMS"],
+        "liveDay": "Thursday"
+      },
+      {
+        "subjectName": "Deployment",
+        "topics": ["Vercel", "Optimization", "SEO"],
+        "projects": ["Deploy App", "SEO Project", "Optimized App"],
+        "liveDay": "Saturday"
+      }
+    ],
+    "whoIsThisFor": [
+      {
+        "subTitle": "Who should join",
+        "targetAudience": [
+          { "title": "React Developers", "description": "Learn Next.js" },
+          { "title": "Fullstack Developers", "description": "Build SSR apps" },
+          { "title": "Freelancers", "description": "Build fast web apps" }
+        ]
+      }
+    ],
+    "careerOutcomes": [
+      {
+        "subTitle": "Jobs",
+        "outcomes": [
+          { "title": "Next.js Developer", "description": "Build SSR apps" },
+          { "title": "Frontend Engineer", "description": "Work on Next.js" },
+          {
+            "title": "Fullstack Developer",
+            "description": "Handle frontend/backend"
+          },
+          {
+            "title": "Software Engineer",
+            "description": "Build production apps"
+          },
+          { "title": "Freelancer", "description": "Take Next.js projects" },
+          {
+            "title": "Startup Founder",
+            "description": "Launch products faster"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "title": "Microservices Architecture Mastery",
+    "subTitle": "Build scalable microservice-based applications",
+    "slug": "microservices-architecture-mastery",
+    "description": "Learn service communication, event-driven architecture, API gateways, resilience patterns, and distributed systems.",
+    "subject": "Backend Architecture",
+    "price": 6999,
+    "originalPrice": 13999,
+    "discount": 50,
+
+    "courseLanguage": "English",
+    "level": "Advanced",
+    "thumbnail": {
+      "url": "https://images.unsplash.com/photo-1558494949-ef010cbdcc31",
+      "publicId": "microservices-course"
+    },
+    "learningOutcomes": [
+      "Service communication",
+      "API Gateway",
+      "Resilience",
+      "Queues",
+      "Scaling"
+    ],
+    "prerequisites": ["Node.js", "Backend Basics"],
+    "tags": ["Microservices", "Architecture"],
+    "duration": 85,
+    "isPublished": true,
+    "enrolledStudents": [],
+    "whatYouWillLearn": [
+      {
+        "subjectName": "Core Microservices",
+        "topics": ["Service Design", "API Gateway", "Service Discovery"],
+        "projects": ["User Service", "Order Service", "Payment Service"],
+        "liveDay": "Monday"
+      },
+      {
+        "subjectName": "Event Driven Systems",
+        "topics": ["Queues", "Kafka", "RabbitMQ"],
+        "projects": ["Notification System", "Order Queue", "Event Bus"],
+        "liveDay": "Wednesday"
+      },
+      {
+        "subjectName": "Reliability",
+        "topics": ["Circuit Breaker", "Retries", "Fallbacks"],
+        "projects": ["Resilient API", "Retry System", "Failover Service"],
+        "liveDay": "Friday"
+      }
+    ],
+    "whoIsThisFor": [
+      {
+        "subTitle": "Ideal for",
+        "targetAudience": [
+          {
+            "title": "Backend Engineers",
+            "description": "Learn microservices"
+          },
+          {
+            "title": "System Architects",
+            "description": "Design distributed systems"
+          },
+          { "title": "Senior Developers", "description": "Scale applications" }
+        ]
+      }
+    ],
+    "careerOutcomes": [
+      {
+        "subTitle": "Advanced Careers",
+        "outcomes": [
+          {
+            "title": "Backend Architect",
+            "description": "Design scalable systems"
+          },
+          {
+            "title": "Microservices Engineer",
+            "description": "Build distributed apps"
+          },
+          {
+            "title": "Platform Engineer",
+            "description": "Develop internal platforms"
+          },
+          { "title": "Tech Lead", "description": "Guide architecture" },
+          { "title": "DevOps Engineer", "description": "Manage deployments" },
+          {
+            "title": "Engineering Manager",
+            "description": "Lead backend teams"
+          }
+        ]
+      }
+    ]
+  }
+]

@@ -52,7 +52,7 @@ export const getCourseCreateByMe = asyncHandler(async (req, res, next) => {
 
 export const createCourse = asyncHandler(async (req, res, next) => {
   const data = req.body;
-  const instructorId = req.user._id;
+  const instructorId = req.user.userId;
 
   const course = await createCourseService(data, instructorId);
 
