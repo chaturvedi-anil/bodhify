@@ -19,6 +19,7 @@ import {
   FieldLabel,
   FieldError,
 } from "@/components/ui/field";
+import { Spinner } from "@/components/ui/spinner";
 import { registerSchema } from "../schema/authSchema";
 import { useRegister } from "../api/auth.query";
 
